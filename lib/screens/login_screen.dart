@@ -1,3 +1,4 @@
+import 'package:adminpanel/widgets/window_buttons.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
@@ -25,8 +26,15 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Scaffold(
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              WindowTitleBarBox(
+                child: Row(
+                  children: [
+                    Expanded(child: MoveWindow()),
+                    const WindowButtons(),
+                  ],
+                ),
+              ),
               const Text(
                 'You have pushed the button this many times:',
               ),
