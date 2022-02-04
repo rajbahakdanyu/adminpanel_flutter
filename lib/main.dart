@@ -1,6 +1,8 @@
-import 'package:adminpanel/screens/login_screen.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/login_screen.dart';
+import 'theme/theme_data.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,9 +26,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Admin panel',
-      theme: ThemeData(
-        primarySwatch: Colors.purple,
-      ),
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
+      themeMode: ThemeMode.dark,
       home: const LoginScreen(),
     );
   }
