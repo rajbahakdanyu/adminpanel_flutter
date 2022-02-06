@@ -1,6 +1,7 @@
-import 'package:adminpanel/widgets/window_buttons.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
+
+import '/widgets/window_buttons.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
