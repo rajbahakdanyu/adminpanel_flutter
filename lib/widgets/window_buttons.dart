@@ -30,3 +30,19 @@ class WindowButtons extends StatelessWidget {
     );
   }
 }
+
+class WindowTitleBar extends StatelessWidget {
+  const WindowTitleBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return WindowTitleBarBox(
+      child: Row(
+        children: [
+          Expanded(child: MoveWindow()),
+          const WindowButtons(),
+        ],
+      ),
+    );
+  }
+}
