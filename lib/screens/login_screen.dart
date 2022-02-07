@@ -2,6 +2,7 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
 import '/widgets/window_buttons.dart';
+import '/widgets/window_container.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -21,9 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WindowBorder(
-      color: Colors.transparent,
-      width: 0,
+    return WindowContainer(
       child: Scaffold(
         body: Center(
           child: Column(

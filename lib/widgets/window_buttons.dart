@@ -1,10 +1,12 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
+import '/constants/colors.dart';
+
 final buttonColors = WindowButtonColors(
   iconNormal: Colors.white,
   mouseOver: Colors.purple.shade300,
-  mouseDown: Colors.purple,
+  mouseDown: primaryColor,
 );
 
 final closeButtonColors = WindowButtonColors(
