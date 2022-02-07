@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       title: 'Admin panel',
       theme: lightTheme(),
       darkTheme: darkTheme(),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       home: const LoginScreen(),
     );
   }

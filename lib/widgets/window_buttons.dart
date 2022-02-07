@@ -4,12 +4,14 @@ import 'package:flutter/material.dart';
 import '/constants/colors.dart';
 
 final buttonColors = WindowButtonColors(
+  normal: Colors.black26,
   iconNormal: Colors.white,
   mouseOver: Colors.purple.shade300,
   mouseDown: primaryColor,
 );
 
 final closeButtonColors = WindowButtonColors(
+  normal: Colors.black26,
   mouseOver: Colors.red,
   mouseDown: Colors.redAccent,
   iconNormal: Colors.white,
