@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '/widgets/window_buttons.dart';
-import '/widgets/window_container.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -13,11 +10,17 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return WindowContainer(
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: Center(
+        child: Column(
           children: const <Widget>[
-            WindowTitleBar(),
+            Card(
+              color: Colors.amber,
+              child: SizedBox(
+                width: 400,
+                height: 300,
+              ),
+            ),
           ],
         ),
       ),
