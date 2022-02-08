@@ -10,7 +10,6 @@ environment:
 
 dependencies:
     animate_do: ^2.1.0
-    bitsdojo_window: ^0.1.1+1
     cupertino_icons: ^1.0.2
     flutter:
         sdk: flutter
