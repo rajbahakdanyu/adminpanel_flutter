@@ -13,6 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: const <Widget>[
             Card(
               color: Colors.amber,
