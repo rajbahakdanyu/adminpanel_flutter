@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/menu_provider.dart';
-import 'screens/login_screen.dart';
+import 'screens/home_screen.dart';
 import 'theme/theme_data.dart';
 
 void main() {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
             create: (context) => MenuProvider(),
           ),
         ],
-        child: const LoginScreen(),
+        child: const HomeScreen(),
       ),
     );
   }
