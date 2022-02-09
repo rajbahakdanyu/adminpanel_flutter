@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'providers/menu_provider.dart';
 import 'screens/login_screen.dart';
 import 'theme/theme_data.dart';
 
@@ -16,10 +18,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Admin panel',
       theme: lightTheme(),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const LoginScreen(),
-      },
+      home: MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+            create: (context) => MenuProvider(),
+          ),
+        ],
+        child: const LoginScreen(),
+      ),
     );
   }
 }
