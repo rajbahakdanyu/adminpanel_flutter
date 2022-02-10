@@ -28,6 +28,7 @@ class DrawerTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _provider = Provider.of<PageProvider>(context);
+    final int currentPage = _provider.page;
 
     return Column(
       children: [
@@ -47,10 +48,12 @@ class DrawerTitle extends StatelessWidget {
               child: ListView(
                 children: [
                   ListTile(
+                    selected: currentPage == 0 ? true : false,
                     onTap: () => _provider.changePage(0),
                     title: const Text('Item 1'),
                   ),
                   ListTile(
+                    selected: currentPage == 1 ? true : false,
                     onTap: () => _provider.changePage(1),
                     title: const Text('Item 2'),
                   ),
@@ -60,16 +63,19 @@ class DrawerTitle extends StatelessWidget {
                     title: const Text('Item 3'),
                     children: [
                       ListTile(
+                        selected: currentPage == 2 ? true : false,
                         onTap: () => _provider.changePage(2),
                         title: const Text('Sub-item 1'),
                       ),
                       ListTile(
+                        selected: currentPage == 3 ? true : false,
                         onTap: () => _provider.changePage(3),
                         title: const Text('Sub-item 2'),
                       ),
                     ],
                   ),
                   ListTile(
+                    selected: currentPage == 4 ? true : false,
                     onTap: () => _provider.changePage(4),
                     title: const Text('Item 4'),
                   ),
