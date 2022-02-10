@@ -5,14 +5,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey,
-      child: Column(
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * .05),
-          const Text('Hello'),
-        ],
-      ),
+    return Column(
+      children: const [
+        Text('Hello'),
+      ],
     );
   }
 }

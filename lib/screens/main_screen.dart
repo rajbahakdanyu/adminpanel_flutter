@@ -25,9 +25,19 @@ class MainScreen extends StatelessWidget {
                   const Expanded(
                     child: SideDrawer(),
                   ),
-                const Expanded(
+                Expanded(
                   flex: 4,
-                  child: HomeScreen(),
+                  child: Container(
+                    color: Colors.grey.shade400,
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height * .05,
+                        ),
+                        const HomeScreen(),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
