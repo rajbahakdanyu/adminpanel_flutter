@@ -9,6 +9,7 @@ class SideDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      elevation: 0,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [

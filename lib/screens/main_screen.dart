@@ -5,6 +5,7 @@ import '/providers/menu_provider.dart';
 import '/utils/responsive.dart';
 import '/widgets/drawer.dart';
 import '/widgets/window_title_bar.dart';
+import '/screens/home_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: context.read<MenuProvider>().scaffoldKey,
-      drawer: const Drawer(),
+      drawer: const SideDrawer(),
       body: SafeArea(
         child: Stack(
           children: [
@@ -24,11 +25,9 @@ class MainScreen extends StatelessWidget {
                   const Expanded(
                     child: SideDrawer(),
                   ),
-                Expanded(
+                const Expanded(
                   flex: 4,
-                  child: Container(
-                    color: Colors.grey,
-                  ),
+                  child: HomeScreen(),
                 ),
               ],
             ),
