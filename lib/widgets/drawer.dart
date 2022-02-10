@@ -13,9 +13,7 @@ class SideDrawer extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
           DrawerTitle(),
-          ListTile(
-            title: Center(child: Text('Log Out')),
-          ),
+          DrawerBottomButtons(),
         ],
       ),
     );
@@ -59,6 +57,26 @@ class DrawerTitle extends StatelessWidget {
             ),
           ),
         )
+      ],
+    );
+  }
+}
+
+class DrawerBottomButtons extends StatelessWidget {
+  const DrawerBottomButtons({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: const [
+        ListTile(
+          visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+          title: Center(child: Text('Settings')),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(horizontal: 0, vertical: -4),
+          title: Center(child: Text('Log Out')),
+        ),
       ],
     );
   }
