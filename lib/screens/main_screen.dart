@@ -13,6 +13,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _menu = Provider.of<MenuProvider>(context);
     final _provider = Provider.of<PageProvider>(context);
     final int currentpage = _provider.page;
 
@@ -49,7 +50,21 @@ class MainScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const WindowTitlebar(),
+            WindowTitlebar(
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: Responsive.isDesktop(context)
+                        ? MediaQuery.of(context).size.width * .2
+                        : 0,
+                  ),
+                  IconButton(
+                    onPressed: () => _menu.controlMenu(),
+                    icon: const Icon(Icons.menu),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
