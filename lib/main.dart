@@ -2,6 +2,7 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/page_provider.dart';
 import 'providers/menu_provider.dart';
 import 'screens/main_screen.dart';
 import 'theme/theme_data.dart';
@@ -31,6 +32,9 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(
             create: (context) => MenuProvider(),
+          ),
+          ChangeNotifierProvider(
+            create: (context) => PageProvider(),
           ),
         ],
         child: const MainScreen(),
