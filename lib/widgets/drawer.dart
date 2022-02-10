@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '/constants/constant.dart';
+
 class SideDrawer extends StatelessWidget {
   const SideDrawer({Key? key}) : super(key: key);
 
@@ -21,7 +23,7 @@ class SideDrawer extends StatelessWidget {
                 ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(padding / 2),
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .7,
               child: ListView.builder(
