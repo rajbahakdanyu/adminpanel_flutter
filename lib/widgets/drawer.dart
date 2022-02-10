@@ -10,43 +10,56 @@ class SideDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SizedBox(height: MediaQuery.of(context).size.height * .05),
-          FaIcon(
-            FontAwesomeIcons.userCircle,
-            size: MediaQuery.of(context).size.width * .04,
-          ),
-          Text(
-            'Admin Panel',
-            style: Theme.of(context).textTheme.headline5!.copyWith(
-                  fontSize: MediaQuery.of(context).size.width * .015,
-                ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(padding / 2),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * .5,
-              child: ScrollConfiguration(
-                behavior: ScrollConfiguration.of(context).copyWith(
-                  scrollbars: false,
-                ),
-                child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return const ListTile(
-                      title: Text('Hello'),
-                    );
-                  },
-                ),
-              ),
-            ),
-          ),
-          const ListTile(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          DrawerTitle(),
+          ListTile(
             title: Center(child: Text('Log Out')),
           ),
         ],
       ),
+    );
+  }
+}
+
+class DrawerTitle extends StatelessWidget {
+  const DrawerTitle({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(height: MediaQuery.of(context).size.height * .05),
+        FaIcon(
+          FontAwesomeIcons.userCircle,
+          size: MediaQuery.of(context).size.width * .04,
+        ),
+        Text(
+          'Admin Panel',
+          style: Theme.of(context).textTheme.headline5!.copyWith(
+                fontSize: MediaQuery.of(context).size.width * .015,
+              ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(padding / 2),
+          child: SizedBox(
+            height: MediaQuery.of(context).size.height * .5,
+            child: ScrollConfiguration(
+              behavior: ScrollConfiguration.of(context).copyWith(
+                scrollbars: false,
+              ),
+              child: ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return const ListTile(
+                    title: Text('Hello'),
+                  );
+                },
+              ),
+            ),
+          ),
+        )
+      ],
     );
   }
 }
