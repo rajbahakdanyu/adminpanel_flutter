@@ -11,18 +11,14 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: context.read<MenuProvider>().scaffoldKey,
-      drawer: Container(
-        color: Colors.amber,
-      ),
+      drawer: const Drawer(),
       body: SafeArea(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (Responsive.isDesktop(context))
-              Expanded(
-                child: Container(
-                  color: Colors.amber,
-                ),
+              const Expanded(
+                child: Drawer(),
               ),
             Expanded(
               flex: 5,
