@@ -31,14 +31,23 @@ class WindowButtons extends StatelessWidget {
 }
 
 class WindowTitlebar extends StatelessWidget {
-  const WindowTitlebar({Key? key}) : super(key: key);
+  const WindowTitlebar({
+    Key? key,
+    this.child,
+  }) : super(key: key);
+
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
     return WindowTitleBarBox(
       child: Row(
         children: [
-          Expanded(child: MoveWindow()),
+          Expanded(
+            child: MoveWindow(
+              child: child,
+            ),
+          ),
           const WindowButtons(),
         ],
       ),
