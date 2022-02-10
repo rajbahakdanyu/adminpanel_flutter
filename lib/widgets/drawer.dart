@@ -46,13 +46,29 @@ class DrawerTitle extends StatelessWidget {
               behavior: ScrollConfiguration.of(context).copyWith(
                 scrollbars: false,
               ),
-              child: ListView.builder(
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  return const ListTile(
-                    title: Text('Hello'),
-                  );
-                },
+              child: ListView(
+                children: const [
+                  ListTile(
+                    title: Text('Item 1'),
+                  ),
+                  ListTile(
+                    title: Text('Item 2'),
+                  ),
+                  ExpansionTile(
+                    title: Text('Item 3'),
+                    children: [
+                      ListTile(
+                        title: Text('Sub-item 1'),
+                      ),
+                      ListTile(
+                        title: Text('Sub-item 2'),
+                      ),
+                    ],
+                  ),
+                  ListTile(
+                    title: Text('Item 4'),
+                  ),
+                ],
               ),
             ),
           ),
