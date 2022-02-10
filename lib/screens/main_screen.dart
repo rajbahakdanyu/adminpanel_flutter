@@ -6,8 +6,8 @@ import '/utils/responsive.dart';
 import '/widgets/drawer.dart';
 import '/widgets/window_title_bar.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class MainScreen extends StatelessWidget {
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
