@@ -9,6 +9,7 @@ ThemeData lightTheme() {
     primaryColor: primaryColor,
     dividerColor: Colors.transparent,
     hoverColor: Colors.transparent,
+    splashColor: Colors.transparent,
     textTheme: Typography.blackCupertino.copyWith(
       bodyText2: GoogleFonts.nunitoSans(),
       bodyText1: GoogleFonts.nunitoSans(),

@@ -48,27 +48,32 @@ class DrawerTitle extends StatelessWidget {
               ),
               child: ListView(
                 children: [
-                  const ListTile(
-                    title: Text('Item 1'),
+                  ListTile(
+                    onTap: () {},
+                    title: const Text('Item 1'),
                   ),
-                  const ListTile(
-                    title: Text('Item 2'),
+                  ListTile(
+                    onTap: () {},
+                    title: const Text('Item 2'),
                   ),
                   ExpansionTile(
                     iconColor: Theme.of(context).unselectedWidgetColor,
                     textColor: Theme.of(context).textTheme.subtitle1!.color,
                     title: const Text('Item 3'),
-                    children: const [
+                    children: [
                       ListTile(
-                        title: Text('Sub-item 1'),
+                        onTap: () {},
+                        title: const Text('Sub-item 1'),
                       ),
                       ListTile(
-                        title: Text('Sub-item 2'),
+                        onTap: () {},
+                        title: const Text('Sub-item 2'),
                       ),
                     ],
                   ),
-                  const ListTile(
-                    title: Text('Item 4'),
+                  ListTile(
+                    onTap: () {},
+                    title: const Text('Item 4'),
                   ),
                 ],
               ),
