@@ -7,6 +7,8 @@ ThemeData lightTheme() {
   return ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: primaryColor,
+    dividerColor: Colors.transparent,
+    hoverColor: Colors.transparent,
     textTheme: Typography.blackCupertino.copyWith(
       bodyText2: GoogleFonts.nunitoSans(),
       bodyText1: GoogleFonts.nunitoSans(),
