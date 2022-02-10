@@ -10,6 +10,7 @@ class SideDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           SizedBox(height: MediaQuery.of(context).size.height * .05),
           FaIcon(
@@ -25,7 +26,7 @@ class SideDrawer extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(padding / 2),
             child: SizedBox(
-              height: MediaQuery.of(context).size.height * .7,
+              height: MediaQuery.of(context).size.height * .5,
               child: ScrollConfiguration(
                 behavior: ScrollConfiguration.of(context).copyWith(
                   scrollbars: false,
@@ -40,7 +41,10 @@ class SideDrawer extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          const ListTile(
+            title: Center(child: Text('Log Out')),
+          ),
         ],
       ),
     );
