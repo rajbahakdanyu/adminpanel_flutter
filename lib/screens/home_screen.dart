@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '/providers/menu_provider.dart';
 import '/utils/responsive.dart';
+import '/widgets/drawer.dart';
 import '/widgets/window_title_bar.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,12 +22,12 @@ class HomeScreen extends StatelessWidget {
               children: [
                 if (Responsive.isDesktop(context))
                   const Expanded(
-                    child: Drawer(),
+                    child: SideDrawer(),
                   ),
                 Expanded(
                   flex: 5,
                   child: Container(
-                    color: Colors.green,
+                    color: Colors.grey,
                   ),
                 ),
               ],

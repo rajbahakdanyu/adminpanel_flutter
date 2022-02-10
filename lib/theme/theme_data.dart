@@ -7,10 +7,13 @@ ThemeData lightTheme() {
   return ThemeData(
     visualDensity: VisualDensity.adaptivePlatformDensity,
     primaryColor: primaryColor,
-    textTheme: Typography.whiteCupertino.copyWith(
-      bodyText2: GoogleFonts.nunitoSans(color: Colors.white),
-      bodyText1: GoogleFonts.nunitoSans(color: Colors.white),
-      button: GoogleFonts.nunitoSans(color: Colors.white),
+    textTheme: Typography.blackCupertino.copyWith(
+      bodyText2: GoogleFonts.nunitoSans(),
+      bodyText1: GoogleFonts.nunitoSans(),
+      button: GoogleFonts.nunitoSans(),
+      headline5: GoogleFonts.nunitoSans(
+        fontWeight: FontWeight.bold,
+      ),
     ),
     buttonTheme: const ButtonThemeData(
       buttonColor: primaryAccent,
