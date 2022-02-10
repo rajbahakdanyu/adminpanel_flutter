@@ -53,15 +53,11 @@ class MainScreen extends StatelessWidget {
             WindowTitlebar(
               child: Row(
                 children: [
-                  SizedBox(
-                    width: Responsive.isDesktop(context)
-                        ? MediaQuery.of(context).size.width * .2
-                        : 0,
-                  ),
-                  IconButton(
-                    onPressed: () => _menu.controlMenu(),
-                    icon: const Icon(Icons.menu),
-                  ),
+                  if (!Responsive.isDesktop(context))
+                    IconButton(
+                      onPressed: () => _menu.controlMenu(),
+                      icon: const Icon(Icons.menu),
+                    ),
                 ],
               ),
             ),
