@@ -26,13 +26,18 @@ class SideDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(padding / 2),
             child: SizedBox(
               height: MediaQuery.of(context).size.height * .7,
-              child: ListView.builder(
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return const ListTile(
-                    title: Text('Hello'),
-                  );
-                },
+              child: ScrollConfiguration(
+                behavior: ScrollConfiguration.of(context).copyWith(
+                  scrollbars: false,
+                ),
+                child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (context, index) {
+                    return const ListTile(
+                      title: Text('Hello'),
+                    );
+                  },
+                ),
               ),
             ),
           )
