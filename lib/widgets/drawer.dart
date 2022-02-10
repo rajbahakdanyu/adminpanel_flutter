@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
 
 import '/constants/constant.dart';
+import '/providers/page_provider.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({Key? key}) : super(key: key);
@@ -26,6 +28,8 @@ class DrawerTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _provider = Provider.of<PageProvider>(context);
+
     return Column(
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * .05),
@@ -50,11 +54,11 @@ class DrawerTitle extends StatelessWidget {
               child: ListView(
                 children: [
                   ListTile(
-                    onTap: () {},
+                    onTap: () => _provider.changePage(0),
                     title: const Text('Item 1'),
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => _provider.changePage(1),
                     title: const Text('Item 2'),
                   ),
                   ExpansionTile(
@@ -63,17 +67,17 @@ class DrawerTitle extends StatelessWidget {
                     title: const Text('Item 3'),
                     children: [
                       ListTile(
-                        onTap: () {},
+                        onTap: () => _provider.changePage(2),
                         title: const Text('Sub-item 1'),
                       ),
                       ListTile(
-                        onTap: () {},
+                        onTap: () => _provider.changePage(3),
                         title: const Text('Sub-item 2'),
                       ),
                     ],
                   ),
                   ListTile(
-                    onTap: () {},
+                    onTap: () => _provider.changePage(4),
                     title: const Text('Item 4'),
                   ),
                 ],
