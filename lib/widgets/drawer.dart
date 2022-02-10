@@ -33,15 +33,9 @@ class DrawerTitle extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: MediaQuery.of(context).size.height * .05),
-        FaIcon(
-          FontAwesomeIcons.userCircle,
-          size: MediaQuery.of(context).size.width * .04,
-        ),
-        Text(
-          'Admin Panel',
-          style: Theme.of(context).textTheme.headline5!.copyWith(
-                fontSize: MediaQuery.of(context).size.width * .015,
-              ),
+        Image.asset(
+          'assets/logo/logo.png',
+          width: MediaQuery.of(context).size.width * .05,
         ),
         Padding(
           padding: const EdgeInsets.all(padding / 2),
