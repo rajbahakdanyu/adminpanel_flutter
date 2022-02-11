@@ -28,7 +28,7 @@ class Responsive extends StatelessWidget {
 
     if (_size.width >= 1000) {
       return desktop;
-    } else if (_size.width >= 1000 && tablet != null) {
+    } else if (_size.width >= 600 && tablet != null) {
       return tablet!;
     } else {
       return mobile;

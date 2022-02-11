@@ -1,6 +1,7 @@
-import 'package:adminpanel/constants/constant.dart';
-import 'package:adminpanel/utils/responsive.dart';
 import 'package:flutter/material.dart';
+
+import '/constants/constant.dart';
+import '/utils/responsive.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({
@@ -17,15 +18,15 @@ class HomeScreen extends StatelessWidget {
           child: const Responsive(
             mobile: InfoRow(
               crossCount: 2,
-              aspectRatio: 21 / 9,
+              aspectRatio: 16 / 9,
             ),
             tablet: InfoRow(
               crossCount: 4,
-              aspectRatio: 8 / 1,
+              aspectRatio: 16 / 9,
             ),
             desktop: InfoRow(
               crossCount: 4,
-              aspectRatio: 16 / 9,
+              aspectRatio: 21 / 9,
             ),
           ),
         ),
@@ -63,7 +64,9 @@ class InfoRow extends StatelessWidget {
 }
 
 class InfoCard extends StatelessWidget {
-  const InfoCard({Key? key}) : super(key: key);
+  const InfoCard({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
