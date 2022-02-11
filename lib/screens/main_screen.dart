@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/constants/constant.dart';
 import '/providers/menu_provider.dart';
 import '/utils/responsive.dart';
 import '/widgets/drawer.dart';
@@ -32,19 +33,28 @@ class MainScreen extends StatelessWidget {
                   ),
                 Expanded(
                   flex: 4,
-                  child: Container(
-                    color: Colors.grey.shade400,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * .05,
+                  child: ScrollConfiguration(
+                    behavior: ScrollConfiguration.of(context).copyWith(
+                      scrollbars: false,
+                    ),
+                    child: SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Container(
+                        color: Colors.grey.shade400,
+                        padding: const EdgeInsets.all(padding),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * .05,
+                            ),
+                            if (currentpage == 0) const HomeScreen(title: "0"),
+                            if (currentpage == 1) const HomeScreen(title: "1"),
+                            if (currentpage == 2) const HomeScreen(title: "2"),
+                            if (currentpage == 3) const HomeScreen(title: "3"),
+                            if (currentpage == 4) const HomeScreen(title: "4"),
+                          ],
                         ),
-                        if (currentpage == 0) const HomeScreen(title: "0"),
-                        if (currentpage == 1) const HomeScreen(title: "1"),
-                        if (currentpage == 2) const HomeScreen(title: "2"),
-                        if (currentpage == 3) const HomeScreen(title: "3"),
-                        if (currentpage == 4) const HomeScreen(title: "4"),
-                      ],
+                      ),
                     ),
                   ),
                 ),
