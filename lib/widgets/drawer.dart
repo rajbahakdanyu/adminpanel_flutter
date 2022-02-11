@@ -1,3 +1,4 @@
+import 'package:adminpanel/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,9 @@ class DrawerTitle extends StatelessWidget {
         SizedBox(height: MediaQuery.of(context).size.height * .05),
         Image.asset(
           'assets/logo/logo.png',
-          width: MediaQuery.of(context).size.width * .05,
+          width: Responsive.isMobile(context)
+              ? MediaQuery.of(context).size.width * .15
+              : MediaQuery.of(context).size.width * .05,
         ),
         Padding(
           padding: const EdgeInsets.all(padding / 2),
@@ -46,6 +49,7 @@ class DrawerTitle extends StatelessWidget {
                 scrollbars: false,
               ),
               child: ListView(
+                physics: const BouncingScrollPhysics(),
                 children: [
                   ListTile(
                     selected: currentPage == 0 ? true : false,

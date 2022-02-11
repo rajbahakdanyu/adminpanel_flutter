@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:adminpanel/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,9 +42,7 @@ class MainScreen extends StatelessWidget {
                     child: SingleChildScrollView(
                       physics: const BouncingScrollPhysics(),
                       child: Container(
-                        color: Colors.grey.shade400,
                         padding: const EdgeInsets.all(padding),
-                        height: MediaQuery.of(context).size.height,
                         child: Column(
                           children: [
                             SizedBox(
@@ -61,7 +61,8 @@ class MainScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const WindowTitlebar(child: TopBar()),
+            if (!Platform.isAndroid && !Platform.isIOS) const WindowTitlebar(),
+            const TopBar(),
           ],
         ),
       ),

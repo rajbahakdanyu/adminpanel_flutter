@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/constants/constant.dart';
 import '/providers/menu_provider.dart';
 import '/utils/responsive.dart';
 
@@ -19,11 +20,14 @@ class TopBar extends StatelessWidget {
             icon: const Icon(Icons.menu),
           ),
         if (Responsive.isDesktop(context))
-          SizedBox(width: MediaQuery.of(context).size.width * .21),
+          SizedBox(width: MediaQuery.of(context).size.width * .2),
         if (!Responsive.isMobile(context))
-          Text(
-            'Admin Panel',
-            style: Theme.of(context).textTheme.headline6,
+          Padding(
+            padding: const EdgeInsets.all(padding / 2),
+            child: Text(
+              'Admin Panel',
+              style: Theme.of(context).textTheme.headline6,
+            ),
           ),
       ],
     );
