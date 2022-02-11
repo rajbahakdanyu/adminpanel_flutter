@@ -1,3 +1,4 @@
+import 'package:adminpanel/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,7 +15,6 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _menu = Provider.of<MenuProvider>(context);
     final _provider = Provider.of<PageProvider>(context);
     final int currentpage = _provider.page;
 
@@ -61,18 +61,7 @@ class MainScreen extends StatelessWidget {
                 ),
               ],
             ),
-            WindowTitlebar(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (!Responsive.isDesktop(context))
-                    IconButton(
-                      onPressed: () => _menu.controlMenu(),
-                      icon: const Icon(Icons.menu),
-                    ),
-                ],
-              ),
-            ),
+            const WindowTitlebar(child: TopBar()),
           ],
         ),
       ),
