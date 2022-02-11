@@ -75,14 +75,17 @@ class InfoCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(padding / 2),
         child: Row(
-          children: const [
+          children: [
             Card(
               child: Padding(
-                padding: EdgeInsets.all(padding / 2),
-                child: Icon(Icons.person),
+                padding: const EdgeInsets.all(padding / 2),
+                child: Icon(
+                  Icons.person,
+                  size: MediaQuery.of(context).size.width * .045,
+                ),
               ),
             ),
-            Text('Item'),
+            const Text('Item'),
           ],
         ),
       ),
