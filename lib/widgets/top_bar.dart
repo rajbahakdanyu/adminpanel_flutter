@@ -35,7 +35,10 @@ class TopBar extends StatelessWidget {
             ),
           if (!Responsive.isMobile(context))
             Padding(
-              padding: const EdgeInsets.all(padding / 4),
+              padding: const EdgeInsets.only(
+                top: padding / 4,
+                left: padding / 4,
+              ),
               child: Text(
                 _page.pageName,
                 style: Theme.of(context).textTheme.headline6,
