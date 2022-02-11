@@ -1,18 +1,16 @@
+import 'package:adminpanel/constants/constant.dart';
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 
 final buttonColors = WindowButtonColors(
-  iconNormal: Colors.white,
-  iconMouseDown: Colors.grey,
-  iconMouseOver: Colors.grey,
-  mouseOver: Colors.white70,
-  mouseDown: Colors.white70,
+  iconNormal: primaryColor,
+  iconMouseDown: primaryColor,
 );
 
 final closeButtonColors = WindowButtonColors(
   mouseOver: const Color(0xFFD32F2F),
   mouseDown: const Color(0xFFB71C1C),
-  iconNormal: Colors.white,
+  iconNormal: primaryColor,
 );
 
 class WindowButtons extends StatelessWidget {
