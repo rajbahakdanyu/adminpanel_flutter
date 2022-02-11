@@ -1,3 +1,4 @@
+import 'package:dropdown_below/dropdown_below.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -59,11 +60,6 @@ class MainScreen extends StatelessWidget {
                       onPressed: () => _menu.controlMenu(),
                       icon: const Icon(Icons.menu),
                     ),
-                  if (Responsive.isDesktop(context)) const SizedBox(),
-                  IconButton(
-                    onPressed: () {},
-                    icon: const Icon(Icons.settings),
-                  ),
                 ],
               ),
             ),
