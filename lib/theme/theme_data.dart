@@ -5,8 +5,8 @@ import '/constants/constant.dart';
 
 ThemeData lightTheme() {
   return ThemeData(
+    colorSchemeSeed: primaryColor,
     visualDensity: VisualDensity.adaptivePlatformDensity,
-    primaryColor: primaryColor,
     dividerColor: Colors.transparent,
     hoverColor: Colors.transparent,
     splashColor: Colors.transparent,
