@@ -11,10 +11,13 @@ ThemeData lightTheme() {
     hoverColor: Colors.transparent,
     splashColor: Colors.transparent,
     textTheme: Typography.blackCupertino.copyWith(
-      bodyText2: GoogleFonts.nunitoSans(),
       bodyText1: GoogleFonts.nunitoSans(),
+      bodyText2: GoogleFonts.nunitoSans(),
       button: GoogleFonts.nunitoSans(),
       headline5: GoogleFonts.nunitoSans(
+        fontWeight: FontWeight.bold,
+      ),
+      headline6: GoogleFonts.nunitoSans(
         fontWeight: FontWeight.bold,
       ),
     ),

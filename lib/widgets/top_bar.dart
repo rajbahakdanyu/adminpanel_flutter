@@ -12,12 +12,18 @@ class TopBar extends StatelessWidget {
     final _menu = Provider.of<MenuProvider>(context);
 
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (!Responsive.isDesktop(context))
           IconButton(
             onPressed: () => _menu.controlMenu(),
             icon: const Icon(Icons.menu),
+          ),
+        if (Responsive.isDesktop(context))
+          SizedBox(width: MediaQuery.of(context).size.width * .21),
+        if (!Responsive.isMobile(context))
+          Text(
+            'Admin Panel',
+            style: Theme.of(context).textTheme.headline6,
           ),
       ],
     );
