@@ -42,6 +42,7 @@ class MainScreen extends StatelessWidget {
                       child: Container(
                         color: Colors.grey.shade400,
                         padding: const EdgeInsets.all(padding),
+                        height: MediaQuery.of(context).size.height,
                         child: Column(
                           children: [
                             SizedBox(
