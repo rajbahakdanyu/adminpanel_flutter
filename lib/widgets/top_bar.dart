@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -14,24 +17,32 @@ class TopBar extends StatelessWidget {
     final _menu = Provider.of<MenuProvider>(context);
     final _page = Provider.of<PageProvider>(context);
 
-    return Row(
-      children: [
-        if (!Responsive.isDesktop(context))
-          IconButton(
-            onPressed: () => _menu.controlMenu(),
-            icon: const Icon(Icons.menu),
-          ),
-        if (Responsive.isDesktop(context))
-          SizedBox(width: MediaQuery.of(context).size.width * .2),
-        if (!Responsive.isMobile(context))
-          Padding(
-            padding: const EdgeInsets.all(padding / 2),
-            child: Text(
-              _page.pageName,
-              style: Theme.of(context).textTheme.headline6,
+    return Container(
+      color: Colors.grey,
+      height: Platform.isAndroid || Platform.isIOS
+          ? null
+          : appWindow.titleBarHeight,
+      margin: Responsive.isDesktop(context)
+          ? EdgeInsets.only(left: MediaQuery.of(context).size.width * .2)
+          : null,
+      child: Row(
+        children: [
+          if (!Responsive.isDesktop(context))
+            IconButton(
+              padding: const EdgeInsets.all(padding / 4),
+              onPressed: () => _menu.controlMenu(),
+              icon: const Icon(Icons.menu),
             ),
-          ),
-      ],
+          if (!Responsive.isMobile(context))
+            Padding(
+              padding: const EdgeInsets.all(padding / 4),
+              child: Text(
+                _page.pageName,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
