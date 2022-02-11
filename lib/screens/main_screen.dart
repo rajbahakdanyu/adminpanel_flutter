@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:adminpanel/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -8,6 +7,7 @@ import '/constants/constant.dart';
 import '/providers/menu_provider.dart';
 import '/utils/responsive.dart';
 import '/widgets/drawer.dart';
+import '/widgets/top_bar.dart';
 import '/widgets/window_title_bar.dart';
 import '/providers/page_provider.dart';
 import '/screens/home_screen.dart';
@@ -48,11 +48,11 @@ class MainScreen extends StatelessWidget {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .05,
                             ),
-                            if (currentpage == 0) const HomeScreen(title: "0"),
-                            if (currentpage == 1) const HomeScreen(title: "1"),
-                            if (currentpage == 2) const HomeScreen(title: "2"),
-                            if (currentpage == 3) const HomeScreen(title: "3"),
-                            if (currentpage == 4) const HomeScreen(title: "4"),
+                            if (currentpage == 0) const HomeScreen(),
+                            if (currentpage == 1) const HomeScreen(),
+                            if (currentpage == 2) const HomeScreen(),
+                            if (currentpage == 3) const HomeScreen(),
+                            if (currentpage == 4) const HomeScreen(),
                           ],
                         ),
                       ),

@@ -1,9 +1,9 @@
-import 'package:adminpanel/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/constants/constant.dart';
 import '/providers/page_provider.dart';
+import '/utils/responsive.dart';
 
 class SideDrawer extends StatelessWidget {
   const SideDrawer({Key? key}) : super(key: key);
@@ -53,35 +53,35 @@ class DrawerTitle extends StatelessWidget {
                 children: [
                   ListTile(
                     selected: currentPage == 0 ? true : false,
-                    onTap: () => _provider.changePage(0),
-                    title: const Text('Item 1'),
+                    onTap: () => _provider.changePage(0, 'Dashboard'),
+                    title: const Text('Dashboard'),
                   ),
                   ListTile(
                     selected: currentPage == 1 ? true : false,
-                    onTap: () => _provider.changePage(1),
-                    title: const Text('Item 2'),
+                    onTap: () => _provider.changePage(1, 'Users'),
+                    title: const Text('Users'),
                   ),
                   ExpansionTile(
                     iconColor: Theme.of(context).unselectedWidgetColor,
                     textColor: Theme.of(context).textTheme.subtitle1!.color,
-                    title: const Text('Item 3'),
+                    title: const Text('Inventory'),
                     children: [
                       ListTile(
                         selected: currentPage == 2 ? true : false,
-                        onTap: () => _provider.changePage(2),
-                        title: const Text('Sub-item 1'),
+                        onTap: () => _provider.changePage(2, 'Items'),
+                        title: const Text('Items'),
                       ),
                       ListTile(
                         selected: currentPage == 3 ? true : false,
-                        onTap: () => _provider.changePage(3),
-                        title: const Text('Sub-item 2'),
+                        onTap: () => _provider.changePage(3, 'Category'),
+                        title: const Text('Category'),
                       ),
                     ],
                   ),
                   ListTile(
                     selected: currentPage == 4 ? true : false,
-                    onTap: () => _provider.changePage(4),
-                    title: const Text('Item 4'),
+                    onTap: () => _provider.changePage(4, 'Sales'),
+                    title: const Text('Sales'),
                   ),
                 ],
               ),
