@@ -1,3 +1,4 @@
+import 'package:charts_flutter/flutter.dart';
 import 'package:flutter/material.dart';
 
 import '/constants/constant.dart';
@@ -30,6 +31,13 @@ class HomeScreen extends StatelessWidget {
               crossCount: 4,
               aspectRatio: 21 / 9,
             ),
+          ),
+        ),
+        Card(
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height * .4,
+            padding: const EdgeInsets.all(padding / 2),
           ),
         ),
       ],
@@ -135,7 +143,10 @@ class InfoCard extends StatelessWidget {
                 ),
                 Text(
                   items[index]['subtitle'],
-                  style: Theme.of(context).textTheme.headline6,
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
                 ),
               ],
             ),
