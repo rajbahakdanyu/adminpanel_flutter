@@ -30,6 +30,17 @@ class SideDrawer extends StatelessWidget {
             padding: const EdgeInsets.all(padding / 2),
           ),
           const CustomDivider(),
+          ListTile(
+            leading: CircleAvatar(
+              child: const Icon(
+                Icons.person_outline,
+                color: Colors.white,
+              ),
+              backgroundColor: Theme.of(context).canvasColor,
+            ),
+            title: const Text('John Doe'),
+          ),
+          const CustomDivider(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(padding / 2),
