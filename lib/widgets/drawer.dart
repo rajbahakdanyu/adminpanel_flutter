@@ -38,8 +38,10 @@ class DrawerTitle extends StatelessWidget {
             'assets/logo/logo.png',
             width: Responsive.isMobile(context)
                 ? MediaQuery.of(context).size.width * .15
-                : MediaQuery.of(context).size.width * .05,
+                : MediaQuery.of(context).size.width * .08,
+            color: Colors.white,
           ),
+          padding: const EdgeInsets.all(padding / 2),
         ),
         Padding(
           padding: const EdgeInsets.all(padding / 2),
