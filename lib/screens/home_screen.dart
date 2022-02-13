@@ -21,8 +21,8 @@ class HomeScreen extends StatelessWidget {
               aspectRatio: 16 / 9,
             ),
             tablet: InfoRow(
-              crossCount: 4,
-              aspectRatio: 16 / 9,
+              crossCount: 2,
+              aspectRatio: 26 / 9,
             ),
             desktop: InfoRow(
               crossCount: 4,
@@ -57,35 +57,70 @@ class InfoRow extends StatelessWidget {
         childAspectRatio: aspectRatio,
       ),
       itemBuilder: (context, index) {
-        return const InfoCard();
+        return InfoCard(
+          index: index,
+        );
       },
     );
   }
 }
 
 class InfoCard extends StatelessWidget {
-  const InfoCard({
+  InfoCard({
     Key? key,
+    required this.index,
   }) : super(key: key);
+
+  final int index;
+
+  final List items = [
+    {
+      'icon': Icons.settings,
+      'color': Colors.blue,
+      'title': 'CPU Traffic',
+      'subtitle': '10 %',
+    },
+    {
+      'icon': Icons.thumb_up_alt_sharp,
+      'color': Colors.red,
+      'title': 'Likes',
+      'subtitle': '69,420',
+    },
+    {
+      'icon': Icons.shopping_cart,
+      'color': Colors.green,
+      'title': 'Sales',
+      'subtitle': '760',
+    },
+    {
+      'icon': Icons.group_rounded,
+      'color': Colors.yellow,
+      'title': 'New Members',
+      'subtitle': '2,000',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: primaryColor,
+      color: Colors.grey.shade800,
       child: Padding(
         padding: const EdgeInsets.all(padding / 2),
         child: Row(
           children: [
             Card(
+              color: items[index]['color'],
               child: Padding(
                 padding: const EdgeInsets.all(padding / 2),
                 child: Icon(
-                  Icons.person,
-                  size: MediaQuery.of(context).size.width * .045,
+                  items[index]['icon'],
+                  size: Responsive.isDesktop(context)
+                      ? MediaQuery.of(context).size.width * .035
+                      : MediaQuery.of(context).size.width * .06,
                 ),
               ),
             ),
-            const Text('Item'),
+            Text(items[index]['title']),
           ],
         ),
       ),
