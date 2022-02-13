@@ -18,7 +18,7 @@ class TopBar extends StatelessWidget {
     final _page = Provider.of<PageProvider>(context);
 
     return Container(
-      color: Colors.grey,
+      color: Colors.grey.shade800,
       height: Platform.isAndroid || Platform.isIOS
           ? null
           : appWindow.titleBarHeight,

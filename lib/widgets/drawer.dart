@@ -15,6 +15,7 @@ class SideDrawer extends StatelessWidget {
 
     return Drawer(
       elevation: 0,
+      backgroundColor: Colors.grey.shade800,
       child: Column(
         children: [
           DrawerHeader(
