@@ -114,34 +114,3 @@ class SideDrawer extends StatelessWidget {
     );
   }
 }
-
-class CustomListTile extends StatelessWidget {
-  const CustomListTile({
-    Key? key,
-    this.isSelected = false,
-    this.selectedColor,
-    this.selectedTileColor,
-    this.func,
-    this.title,
-    this.leading,
-  }) : super(key: key);
-
-  final bool isSelected;
-  final Color? selectedColor;
-  final Color? selectedTileColor;
-  final VoidCallback? func;
-  final Widget? title;
-  final Widget? leading;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      selected: isSelected,
-      selectedColor: selectedColor,
-      selectedTileColor: selectedTileColor,
-      onTap: func,
-      leading: leading,
-      title: title,
-    );
-  }
-}
