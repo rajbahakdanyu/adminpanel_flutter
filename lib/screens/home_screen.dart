@@ -14,7 +14,9 @@ class HomeScreen extends StatelessWidget {
       children: [
         SizedBox(
           width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
+          height: Responsive.isDesktop(context)
+              ? MediaQuery.of(context).size.height * .18
+              : MediaQuery.of(context).size.height * .5,
           child: const Responsive(
             mobile: InfoRow(
               crossCount: 2,
