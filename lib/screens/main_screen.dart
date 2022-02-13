@@ -49,11 +49,7 @@ class MainScreen extends StatelessWidget {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * .05,
                             ),
-                            if (currentpage == 0) const HomeScreen(),
-                            if (currentpage == 1) const HomeScreen(),
-                            if (currentpage == 2) const HomeScreen(),
-                            if (currentpage == 3) const HomeScreen(),
-                            if (currentpage == 4) const HomeScreen(),
+                            currentScreen(currentpage),
                           ],
                         ),
                       ),
@@ -68,5 +64,22 @@ class MainScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Widget currentScreen(currentpage) {
+    switch (currentpage) {
+      case 1:
+        return const HomeScreen();
+      case 2:
+        return const HomeScreen();
+      case 3:
+        return const HomeScreen();
+      case 4:
+        return const HomeScreen();
+      case 5:
+        return const HomeScreen();
+      default:
+        return const HomeScreen();
+    }
   }
 }
