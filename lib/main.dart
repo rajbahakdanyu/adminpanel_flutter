@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Admin panel',
-      theme: lightTheme(),
+      darkTheme: darkTheme(),
       home: MultiProvider(
         providers: [
           ChangeNotifierProvider(

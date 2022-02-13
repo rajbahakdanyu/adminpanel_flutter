@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '/constants/constant.dart';
 
-ThemeData lightTheme() {
-  return ThemeData(
-    colorSchemeSeed: primaryColor,
+ThemeData darkTheme() {
+  return ThemeData.dark().copyWith(
+    colorScheme: ColorScheme.fromSeed(seedColor: primaryColor),
     visualDensity: VisualDensity.adaptivePlatformDensity,
     dividerColor: Colors.transparent,
     hoverColor: Colors.transparent,
     splashColor: Colors.transparent,
-    textTheme: Typography.blackCupertino.copyWith(
+    textTheme: Typography.whiteCupertino.copyWith(
       bodyText1: GoogleFonts.nunitoSans(),
       bodyText2: GoogleFonts.nunitoSans(),
       button: GoogleFonts.nunitoSans(),
