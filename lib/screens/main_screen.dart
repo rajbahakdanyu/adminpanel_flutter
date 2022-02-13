@@ -78,6 +78,8 @@ class MainScreen extends StatelessWidget {
         return const HomeScreen();
       case 5:
         return const HomeScreen();
+      case 6:
+        return const HomeScreen();
       default:
         return const HomeScreen();
     }

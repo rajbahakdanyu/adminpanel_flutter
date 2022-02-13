@@ -38,6 +38,7 @@ class SideDrawer extends StatelessWidget {
               ),
               backgroundColor: Theme.of(context).canvasColor,
             ),
+            onTap: () => _provider.changePage(6, 'Profile'),
             title: const Text('John Doe'),
           ),
           const CustomDivider(),
