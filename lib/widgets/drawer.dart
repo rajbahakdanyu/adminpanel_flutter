@@ -40,11 +40,15 @@ class SideDrawer extends StatelessWidget {
                   children: [
                     ListTile(
                       selected: currentPage == 0 ? true : false,
+                      selectedColor: Colors.white,
+                      selectedTileColor: Theme.of(context).canvasColor,
                       onTap: () => _provider.changePage(0, 'Dashboard'),
                       title: const Text('Dashboard'),
                     ),
                     ListTile(
                       selected: currentPage == 1 ? true : false,
+                      selectedColor: Colors.white,
+                      selectedTileColor: Theme.of(context).canvasColor,
                       onTap: () => _provider.changePage(1, 'Users'),
                       title: const Text('Users'),
                     ),
@@ -55,11 +59,15 @@ class SideDrawer extends StatelessWidget {
                       children: [
                         ListTile(
                           selected: currentPage == 2 ? true : false,
+                          selectedColor: Colors.white,
+                          selectedTileColor: Theme.of(context).canvasColor,
                           onTap: () => _provider.changePage(2, 'Items'),
                           title: const Text('Items'),
                         ),
                         ListTile(
                           selected: currentPage == 3 ? true : false,
+                          selectedColor: Colors.white,
+                          selectedTileColor: Theme.of(context).canvasColor,
                           onTap: () => _provider.changePage(3, 'Category'),
                           title: const Text('Category'),
                         ),
@@ -67,11 +75,16 @@ class SideDrawer extends StatelessWidget {
                     ),
                     ListTile(
                       selected: currentPage == 4 ? true : false,
+                      selectedColor: Colors.white,
+                      selectedTileColor: Theme.of(context).canvasColor,
                       onTap: () => _provider.changePage(4, 'Sales'),
                       title: const Text('Sales'),
                     ),
                     ListTile(
-                      onTap: () {},
+                      selected: currentPage == 5 ? true : false,
+                      selectedColor: Colors.white,
+                      selectedTileColor: Theme.of(context).canvasColor,
+                      onTap: () => _provider.changePage(5, 'Settings'),
                       title: const Text('Settings'),
                     ),
                     ListTile(
