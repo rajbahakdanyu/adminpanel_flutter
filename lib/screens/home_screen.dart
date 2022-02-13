@@ -94,7 +94,7 @@ class InfoCard extends StatelessWidget {
     },
     {
       'icon': Icons.group_rounded,
-      'color': Colors.yellow,
+      'color': Colors.brown,
       'title': 'New Members',
       'subtitle': '2,000',
     },
@@ -120,7 +120,23 @@ class InfoCard extends StatelessWidget {
                 ),
               ),
             ),
-            Text(items[index]['title']),
+            const SizedBox(width: padding / 2),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  items[index]['title'],
+                  style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                Text(
+                  items[index]['subtitle'],
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ],
+            ),
           ],
         ),
       ),
