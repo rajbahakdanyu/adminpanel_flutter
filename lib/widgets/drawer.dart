@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '/constants/constant.dart';
 import '/providers/page_provider.dart';
+import '/widgets/custom_divider.dart';
 import '/utils/responsive.dart';
 
 class SideDrawer extends StatelessWidget {
@@ -28,12 +29,7 @@ class SideDrawer extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(padding / 2),
           ),
-          Divider(
-            thickness: 1,
-            indent: indents,
-            endIndent: indents,
-            color: Theme.of(context).canvasColor,
-          ),
+          const CustomDivider(),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(padding / 2),
