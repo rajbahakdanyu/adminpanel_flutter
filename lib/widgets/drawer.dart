@@ -28,6 +28,12 @@ class SideDrawer extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(padding / 2),
           ),
+          Divider(
+            thickness: 1,
+            indent: indents,
+            endIndent: indents,
+            color: Theme.of(context).canvasColor,
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(padding / 2),
