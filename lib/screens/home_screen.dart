@@ -41,8 +41,9 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.all(padding),
             child: SfCartesianChart(
               primaryXAxis: DateTimeAxis(),
+              primaryYAxis: NumericAxis(),
               series: <ChartSeries>[
-                LineSeries<ChartData, DateTime>(
+                SplineAreaSeries<ChartData, DateTime>(
                   dataSource: data,
                   xValueMapper: (ChartData sales, _) => sales.year,
                   yValueMapper: (ChartData sales, _) => sales.sales,
