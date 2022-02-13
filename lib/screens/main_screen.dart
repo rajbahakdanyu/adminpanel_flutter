@@ -69,19 +69,19 @@ class MainScreen extends StatelessWidget {
   Widget currentScreen(currentpage) {
     switch (currentpage) {
       case 1:
-        return const HomeScreen();
+        return HomeScreen();
       case 2:
-        return const HomeScreen();
+        return HomeScreen();
       case 3:
-        return const HomeScreen();
+        return HomeScreen();
       case 4:
-        return const HomeScreen();
+        return HomeScreen();
       case 5:
-        return const HomeScreen();
+        return HomeScreen();
       case 6:
-        return const HomeScreen();
+        return HomeScreen();
       default:
-        return const HomeScreen();
+        return HomeScreen();
     }
   }
 }

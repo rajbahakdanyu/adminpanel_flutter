@@ -1,12 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '/constants/constant.dart';
 import '/utils/responsive.dart';
 
+class SalesData {
+  SalesData(
+    this.year,
+    this.sales,
+  );
+
+  final DateTime year;
+  final double sales;
+}
+
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({
+  HomeScreen({
     Key? key,
   }) : super(key: key);
+
+  final List<SalesData> data = [
+    SalesData(DateTime.now(), 35),
+    SalesData(DateTime.now().add(const Duration(days: 1)), 28),
+    SalesData(DateTime.now().add(const Duration(days: 2)), 34),
+    SalesData(DateTime.now().add(const Duration(days: 3)), 32),
+    SalesData(DateTime.now().add(const Duration(days: 4)), 40)
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +55,17 @@ class HomeScreen extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .4,
-            padding: const EdgeInsets.all(padding / 2),
+            padding: const EdgeInsets.all(padding),
+            child: SfCartesianChart(
+              primaryXAxis: DateTimeAxis(),
+              series: <ChartSeries>[
+                LineSeries<SalesData, DateTime>(
+                  dataSource: data,
+                  xValueMapper: (SalesData sales, _) => sales.year,
+                  yValueMapper: (SalesData sales, _) => sales.sales,
+                )
+              ],
+            ),
           ),
         ),
       ],
