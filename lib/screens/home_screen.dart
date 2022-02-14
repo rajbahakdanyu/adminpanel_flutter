@@ -37,11 +37,18 @@ class HomeScreen extends StatelessWidget {
         Card(
           child: Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height * .4,
+            height: MediaQuery.of(context).size.height * .5,
             padding: const EdgeInsets.all(padding),
             child: SfCartesianChart(
               primaryXAxis: DateTimeAxis(),
               primaryYAxis: NumericAxis(),
+              title: ChartTitle(
+                text: 'Sales Report',
+                textStyle: Theme.of(context).textTheme.headline6!.copyWith(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).textScaleFactor * 16,
+                    ),
+              ),
               series: <ChartSeries>[
                 SplineAreaSeries<ChartData, DateTime>(
                   dataSource: data,
