@@ -39,22 +39,50 @@ class HomeScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * .5,
             padding: const EdgeInsets.all(padding),
-            child: SfCartesianChart(
-              primaryXAxis: DateTimeAxis(),
-              primaryYAxis: NumericAxis(),
-              title: ChartTitle(
-                text: 'Sales Report',
-                textStyle: Theme.of(context).textTheme.headline6!.copyWith(
-                      color: Colors.white,
-                      fontSize: MediaQuery.of(context).textScaleFactor * 16,
+            child: Row(
+              children: [
+                Expanded(
+                  child: SfCartesianChart(
+                    primaryXAxis: DateTimeAxis(),
+                    primaryYAxis: NumericAxis(),
+                    title: ChartTitle(
+                      text: 'Sales Report',
+                      textStyle:
+                          Theme.of(context).textTheme.headline6!.copyWith(
+                                color: Colors.white,
+                                fontSize:
+                                    MediaQuery.of(context).textScaleFactor * 16,
+                              ),
                     ),
-              ),
-              series: <ChartSeries>[
-                SplineAreaSeries<ChartData, DateTime>(
-                  dataSource: data,
-                  xValueMapper: (ChartData sales, _) => sales.year,
-                  yValueMapper: (ChartData sales, _) => sales.sales,
-                )
+                    series: <ChartSeries>[
+                      SplineAreaSeries<ChartData, DateTime>(
+                        dataSource: data,
+                        xValueMapper: (ChartData sales, _) => sales.year,
+                        yValueMapper: (ChartData sales, _) => sales.sales,
+                      )
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .2,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          vertical: padding / 2,
+                        ),
+                        child: LinearProgressIndicator(
+                          value: .9,
+                          minHeight: 10,
+                        ),
+                      ),
+                      LinearProgressIndicator(value: .7),
+                      LinearProgressIndicator(value: .5),
+                      LinearProgressIndicator(value: .4),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
