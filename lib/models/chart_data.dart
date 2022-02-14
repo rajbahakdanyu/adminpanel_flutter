@@ -8,10 +8,14 @@ class ChartData {
   final double sales;
 }
 
+const int day = 30;
+
 final List<ChartData> data = [
-  ChartData(DateTime.now(), 35),
-  ChartData(DateTime.now().subtract(const Duration(days: 1)), 28),
-  ChartData(DateTime.now().subtract(const Duration(days: 2)), 34),
-  ChartData(DateTime.now().subtract(const Duration(days: 3)), 32),
-  ChartData(DateTime.now().subtract(const Duration(days: 4)), 40),
+  ChartData(DateTime.now(), 120),
+  ChartData(DateTime.now().subtract(const Duration(days: day)), 101),
+  ChartData(DateTime.now().subtract(const Duration(days: day * 2)), 87),
+  ChartData(DateTime.now().subtract(const Duration(days: day * 3)), 73),
+  ChartData(DateTime.now().subtract(const Duration(days: day * 4)), 69),
+  ChartData(DateTime.now().subtract(const Duration(days: day * 5)), 49),
+  ChartData(DateTime.now().subtract(const Duration(days: day * 6)), 32),
 ];
